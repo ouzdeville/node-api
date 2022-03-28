@@ -4,7 +4,7 @@
   "description": "",
   "apidoc": {
     "title": "Le titre de mon API",
-    "url" : "https://tdsi.ucad.sn/v1"
+    "url" : "https://tdsi.ucad.sn"
   },
   "main": "index.js",
   "scripts": {
