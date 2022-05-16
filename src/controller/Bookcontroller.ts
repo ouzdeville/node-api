@@ -57,7 +57,7 @@ export default class BookController {
     }
 
     static getAllBooks(req: Request, resp: Response) {
-        Book.find((err, books) => {
+        Book.find((err: any, books: any) => {
             if (err) {
                 resp.status(500).send(err)
             } else {
@@ -86,7 +86,7 @@ export default class BookController {
     }
 
     static deleteBookById(req: Request, resp: Response) {
-        Book.deleteOne({ _id: req.params.id }, err => {
+        Book.deleteOne({ _id: req.params.id }, (err: any) => {
             if (err) resp.status(500).send(err);
             else resp.send("Successfuly deleted Book");
         });
