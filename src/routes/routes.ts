@@ -1,5 +1,6 @@
 import express from "express";
 import BookController from "../controller/BookController";
+import EtudiantController from "../controller/etudiantController";
 import UserController from "../controller/userController"
 import authMiddleware from "../midlleware/authMiddleware";
 
@@ -23,6 +24,15 @@ export default class MobileRouting {
         this.app.put("/books/:id", authMiddleware.validateUserToken, BookController.updateBookById);
         /* Requête HTTP DELETE http://localhost:8700/books/id */
         this.app.delete("/books/:id", authMiddleware.validateUserToken, BookController.deleteBookById);
+        
+        /* Requête HTTP GET http://localhost:8700/etudiants/id */
+        this.app.get("/etudiants/:id", authMiddleware.validateUserToken,EtudiantController.getEtuById);
+        /* Requête HTTP POST http://localhost:8700/etudiants */
+        this.app.get("/etudiants", authMiddleware.validateUserToken, EtudiantController.getAllEtu);
+        /* Requête HTTP PUT http://localhost:8700/etudiants/id */
+        this.app.put("/etudiants/:id", authMiddleware.validateUserToken, EtudiantController.updateEtuById);
+        /* Requête HTTP DELETE http://localhost:8700/etudiants/id */
+        this.app.delete("/etudiants/:id", authMiddleware.validateUserToken, EtudiantController.deleteEtuById);
     }
 
 }

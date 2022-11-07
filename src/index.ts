@@ -15,7 +15,7 @@ app.use(serveStatic("public"));
 /* Actvier CORS*/
 app.use(cors());
 /* Connection à MongoDb*/
-const uri: string = "mongodb://localhost:27017/biblio";
+const uri: string = "mongodb://localhost:27017/GP";
 mongoose.connect(uri, (err) => {
     if (err) { console.log(err); }
     else { console.log("Mongo db connection sucess"); }
